@@ -57,6 +57,8 @@ export default async function handler(req, res) {
     // 3. Make the prediction
     const result = await client.predict("/predict", { question: prompt });
 
+    console.log(result.data);
+
     // 4. Extract the response data
     const rawText = result?.data?.[0] || "No suggestions available";
 
