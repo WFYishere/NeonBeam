@@ -39,44 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     displayTagCloud([]);
   });
 
-askBtn.addEventListener("click", async () => {
-    const userPrompt = userInput.value.trim(); // Use the updated input field value
-    if (!userPrompt) return;
-  
-    // Reset progress bar and show progress container
-    progressBar.style.width = "0%";
-    progressContainer.style.display = "block";
-  
-    let progress = 0;
-    const progressInterval = setInterval(() => {
-      if (progress < 90) {
-        progress += 10;
-        progressBar.style.width = `${progress}%`;
-      }
-    }, 200);
-  
-    try {
-      const suggestions = await getSuggestions(userPrompt);
-  
-      progressBar.style.width = "100%";
-      clearInterval(progressInterval);
-      setTimeout(() => {
-        progressContainer.style.display = "none";
-      }, 500);
-  
-      pickRandomSuggestion(suggestions);
-      displayTagCloud(suggestions);
-    } catch (error) {
-      console.error("Error fetching suggestions:", error);
-      clearInterval(progressInterval);
-      progressBar.style.width = "100%";
-      progressBar.style.backgroundColor = "red";
-      setTimeout(() => {
-        progressContainer.style.display = "none";
-      }, 2000);
-    }
-  });
-
 async function getSuggestions(prompt) {
     try {
         const response = await fetch(apiEndpoint, {
