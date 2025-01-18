@@ -1,4 +1,13 @@
 /*
+import { PredictionServiceClient } from "@google-cloud/aiplatform";
+
+// Initialize the Google Gemini client
+const client = new PredictionServiceClient({
+  apiEndpoint: "us-central1-aiplatform.googleapis.com",
+});
+
+const endpoint = `projects/your-project-id/locations/us-central1/publishers/google/models/gemini-1p5-flash`;
+
 export default async function handler(req, res) {
     try {
       // 1. User Input
