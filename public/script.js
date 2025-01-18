@@ -34,29 +34,6 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
       dropdownMenu.style.display = "none"; 
     });
 });
-  
-document.addEventListener("DOMContentLoaded", () => {
-    displayTagCloud([]);
-  });
-
-// Add an event listener for fetching suggestions and updating the word cloud
-userInput.addEventListener("change", async () => {
-    const prompt = userInput.value.trim();
-
-    progressContainer.style.display = "block";
-    progressBar.style.width = "0%";
-
-    const suggestions = await getSuggestions(prompt);
-
-    progressBar.style.width = "100%";
-    setTimeout(() => {
-        progressContainer.style.display = "none"; // Hide progress after a short delay
-    }, 500);
-
-    // Update
-    displayTagCloud(suggestions);
-    pickRandomSuggestion(suggestions);
-});
 
 async function getSuggestions(prompt) {
     try {
@@ -84,34 +61,3 @@ async function getSuggestions(prompt) {
         return [];
     }
 }
-
-function displayTagCloud(wordsArray) {
-    // Clear old cloud
-    const cloudContainer = document.getElementById("cloud-container");
-    cloudContainer.innerHTML = ""; 
-
-    if (!wordsArray.length) {
-        wordsArray = placeholderWords; // Use placeholder words if no suggestions
-    }
-
-    TagCloud("#cloud-container", wordsArray, {
-        radius: 150,
-        maxSpeed: "fast",
-        initSpeed: "normal",
-        direction: 360,
-        keep: true,
-        reverseDirection: true,
-    });
-}
-
-// Random pick
-function pickRandomSuggestion(suggestions) {
-    if (!suggestions.length) {
-        document.getElementById("chosenOption").textContent = "";
-        return;
-    }
-    const randomIndex = Math.floor(Math.random() * suggestions.length);
-    const chosen = suggestions[randomIndex];
-    document.getElementById("chosenOption").textContent = `Suggestion: ${chosen}`;
-}
-
