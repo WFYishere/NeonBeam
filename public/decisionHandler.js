@@ -24,6 +24,7 @@ askBtn.addEventListener("click", async () => {
       progressContainer.style.display = "none";
     }, 500);
 
+    displayTagCloud(suggestions);
     startCyclingSuggestions(suggestions);
 
     document.getElementById("stopBtn").style.display = "block";
