@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 // api/llm.js
 export default function handler(req, res) {
     return res.status(200).json({
-      suggestions: "Pizza, Burger, Salad, Sushi, Pasta"
+      suggestions: "Pizza, Burger, Salad, Sushi, Pasta, Tacos, Ramen, Sandwich, Steak, Fried Chicken, Nachos, Curry, Falafel, Paella, Hot Dog, Burrito, Dumplings, Lasagna, Gnocchi, Quiche, Shawarma, Pho, Hamburger, Kebab, Risotto, Chili, Poutine, Gyro, Fried Rice, Omelette"
     });
   }
   

@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#askBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #2196f3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#askBtn:hover {
+    background-color: #4433db;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#userInput {
+    width: 100%;
+    padding: 6px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+#dropdown-arrow {
+    padding: 0 8px;
+    cursor: pointer;
+    color: #2196f3;
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+.dropdown-arrow:hover {
+    background-color: #093bbb;
+}
+
+#dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    width: 80%;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    text-align: left;
+    color: white;
+    background-color: rgb(124, 146, 243);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #5b4bf0;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    margin-left: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #2196f3;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #1e88e5;
+}
+
+#cloud-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+
+#chosenOption {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    margin: 10px 0;
+    height: 20px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #2196f3;
+    transition: width 0.2s ease-in-out;
+}
