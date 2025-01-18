@@ -50,7 +50,7 @@ async function getSuggestions(prompt) {
         });
 
         if (!response.ok) {
-            console.error(Server returned an error: ", await response.text());
+            console.error("Server returned an error: ", await response.text());
                 return [];
         }
         
