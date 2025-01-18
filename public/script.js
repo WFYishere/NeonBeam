@@ -1,3 +1,9 @@
+const placeholderWords = [
+    "Time", "People", "Work", "Food", "Water", "Music", "Movies", "Travel", "Friends", "Family",
+    "Sunshine", "Language", "Health", "Coffee", "Internet", "Books", "Nature", "Education", "Power", "Phone",
+    "Laptop", "Ocean", "Forest", "Mountain", "Art", "History", "Culture", "Dance", "Party", "Happiness",
+    "Freedom", "Dreams", "Reality", "Lightning", "Storm", "Rainbow", "Poetry", "Experience", "Cheese", "Wisdom"
+  ];
 
 const apiEndpoint = "/api/llm";
 
@@ -29,6 +35,10 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
     });
 });
   
+document.addEventListener("DOMContentLoaded", () => {
+    displayTagCloud([]);
+  });
+
 askBtn.addEventListener("click", async () => {
     const userPrompt = userInput.value.trim(); // Use the updated input field value
     if (!userPrompt) return;
@@ -54,8 +64,8 @@ askBtn.addEventListener("click", async () => {
         progressContainer.style.display = "none";
       }, 500);
   
-      displayTagCloud(suggestions);
       pickRandomSuggestion(suggestions);
+      displayTagCloud(suggestions);
     } catch (error) {
       console.error("Error fetching suggestions:", error);
       clearInterval(progressInterval);
@@ -91,20 +101,20 @@ async function getSuggestions(prompt) {
 
 function displayTagCloud(wordsArray) {
     // Clear old cloud
-    document.getElementById("cloud-container").innerHTML = "";
+    const cloudContainer = document.getElementById("cloud-container");
+    cloudContainer.innerHTML = ""; 
 
     if (!wordsArray.length) {
-        // If no suggestions found
-        document.getElementById("cloud-container").innerText = "No suggestions found.";
-        return;
+        wordsArray = placeholderWords; // Use placeholder words if no suggestions
     }
 
     TagCloud("#cloud-container", wordsArray, {
         radius: 150,
         maxSpeed: "fast",
         initSpeed: "normal",
-        direction: 135,
+        direction: 360,
         keep: true,
+        reverseDirection: true,
     });
 }
 
