@@ -1,0 +1,16 @@
+{
+  "name": "decidophobia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@gradio/client": "^1.10.0",
+    "TagCloud": "^2.5.0"
+  }
+}

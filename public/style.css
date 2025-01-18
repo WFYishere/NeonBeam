@@ -155,7 +155,6 @@ button:hover {
 .suggestion-text {
     margin-top: 20px;
     margin-bottom: 20px;
-    /* Add space between suggestion and word cloud */
     font-size: 1.2rem;
     font-weight: bold;
     color: #c0161c;
