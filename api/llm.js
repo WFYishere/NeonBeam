@@ -24,15 +24,10 @@ export default async function handler(req, res) {
   
 */
 
-export default async function handler(req, res) {
-    try {
-      //dummy suggestions:
-      const dummyText = "Pizza, Burger, Salad, Sushi, Pasta";
-  
-      return res.status(200).json({ suggestions: dummyText });
-    } catch (error) {
-      console.error("Error in llm.js:", error);
-      return res.status(500).json({ error: "Server Error" });
-    }
+// api/llm.js
+export default function handler(req, res) {
+    return res.status(200).json({
+      suggestions: "Pizza, Burger, Salad, Sushi, Pasta"
+    });
   }
   
