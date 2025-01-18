@@ -39,6 +39,25 @@ document.addEventListener("DOMContentLoaded", () => {
     displayTagCloud([]);
   });
 
+// Add an event listener for fetching suggestions and updating the word cloud
+userInput.addEventListener("change", async () => {
+    const prompt = userInput.value.trim();
+
+    progressContainer.style.display = "block";
+    progressBar.style.width = "0%";
+
+    const suggestions = await getSuggestions(prompt);
+
+    progressBar.style.width = "100%";
+    setTimeout(() => {
+        progressContainer.style.display = "none"; // Hide progress after a short delay
+    }, 500);
+
+    // Update
+    displayTagCloud(suggestions);
+    pickRandomSuggestion(suggestions);
+});
+
 async function getSuggestions(prompt) {
     try {
         const response = await fetch(apiEndpoint, {
