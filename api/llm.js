@@ -60,7 +60,7 @@ export default async function handler(req, res) {
     console.log(result.data);
 
     // 4. Extract the response data
-    const rawText = result?.data?.[0] || "No suggestions available";
+    const rawText = result.data.[0] || "No suggestions available";
 
     // 5. Return the suggestions as JSON
     return res.status(200).json({ suggestions: rawText });
