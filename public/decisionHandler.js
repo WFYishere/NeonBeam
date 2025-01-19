@@ -8,6 +8,10 @@ askBtn.addEventListener("click", async () => {
   progressBar.style.width = "0%";
   progressContainer.style.display = "block";
 
+  // Stop any ongoing cycling interval before starting a new one
+  clearInterval(cyclingInterval);
+  cyclingInterval = null;
+
   let progress = 0;
   const progressInterval = setInterval(() => {
     if (progress < 90) {
@@ -58,6 +62,9 @@ function startCyclingSuggestions(suggestions) {
     document.getElementById("chosenOption").textContent = "No suggestions available.";
     return;
   }
+
+  // Stop any existing cycling interval
+  clearInterval(cyclingInterval);
 
   let currentIndex = 0;
   cyclingInterval = setInterval(() => {
