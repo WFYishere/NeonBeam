@@ -11,14 +11,14 @@ body {
     flex-direction: row; /* Align elements horizontally */
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 90%; /*600px*/
+    max-width: 80%; /*600px*/
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #faf8ed;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin-top: 40px;
+    margin-top: 20px; /* 40px */
 }
 
 h1 {
