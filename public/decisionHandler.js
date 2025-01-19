@@ -160,7 +160,7 @@ function displayTagCloud(wordsArray) {
   }
 
   TagCloud("#cloud-container", wordsArray, {
-    radius: 180,
+    radius: 300,
     maxSpeed: "fast",
     initSpeed: "normal",
     direction: 360,
