@@ -4,31 +4,6 @@ NeonBeam is a playful and interactive website designed to help people overcome d
 
 ---
 
-## **Features**
-- **AI-Powered Suggestions**: Input any question, and NeonBeam uses a fine-tuned Gemini-1.5-Flash model to generate creative, context-aware recommendations.
-- **Dynamic Word Cloud**: Visualize potential answers in real-time through an interactive and colorful word cloud.
-- **Gamified Option Selector**: Stop the spinning options to lock in your choice—decision-making has never been this fun!
-- **Seamless Deployment**: Hosted on Vercel for fast and reliable performance.
-
----
-
-## **How It Works**
-1. **Enter a Question**: Ask anything, like “What should I eat for dinner?” or “Which movie should I watch?”
-2. **Generate Suggestions**: NeonBeam’s AI provides multiple options tailored to your query.
-3. **Visualize Options**: Watch the dynamic word cloud fill with possibilities.
-4. **Pick Your Choice**: Let the spinning selector decide, or stop it at just the right moment for a final recommendation.
-
----
-
-## **Tech Stack**
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Fine-tuned Gemini-1.5-Flash model
-- **Visualization**: Word cloud library
-- **Cloud Services**: Vercel for serverless deployment
-- **APIs**: Gemini for model fine-tuning and inference
-
----
-
 ## **Getting Started**  
 
 You can try NeonBeam right now by visiting our live website:  
@@ -95,3 +70,29 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - **Gemini**: For providing the Gemini-1.5-Flash model and APIs.
 - **Vercel**: For hosting our serverless app.
 - **[TagCloud](https://www.npmjs.com/package/TagCloud)**: For generating Word Cloud
+
+---
+
+## **Features**
+- **AI-Powered Suggestions**: Input any question, and NeonBeam uses a fine-tuned Gemini-1.5-Flash model to generate creative, context-aware recommendations.
+- **Dynamic Word Cloud**: Visualize potential answers in real-time through an interactive and colorful word cloud.
+- **Gamified Option Selector**: Stop the spinning options to lock in your choice—decision-making has never been this fun!
+- **Seamless Deployment**: Hosted on Vercel for fast and reliable performance.
+
+---
+
+## **How It Works**
+1. **Enter a Question**: Ask anything, like “What should I eat for dinner?” or “Which movie should I watch?”
+2. **Generate Suggestions**: NeonBeam’s AI provides multiple options tailored to your query.
+3. **Visualize Options**: Watch the dynamic word cloud fill with possibilities.
+4. **Pick Your Choice**: Let the spinning selector decide, or stop it at just the right moment for a final recommendation.
+
+---
+
+## **Tech Stack**
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Fine-tuned Gemini-1.5-Flash model
+- **Visualization**: Word cloud library
+- **Cloud Services**: Vercel for serverless deployment
+- **APIs**: Gemini for model fine-tuning and inference
+
