@@ -70,9 +70,21 @@ function startCyclingSuggestions(suggestions) {
   clearInterval(cyclingInterval);
 
   let currentIndex = 0;
+  
+  // Ensure only the choice text cycles
+  const dynamicElement = document.createElement("span");
+  dynamicElement.id = "dynamicChoice";
+  dynamicElement.textContent = suggestions[currentIndex];
+  
+  // Add the static label if it doesn't exist
+  const chosenOptionElement = document.getElementById("chosenOption");
+  chosenOptionElement.innerHTML = "<span class='static-label'>Suggestion:</span> "; // Reset with static label
+  chosenOptionElement.appendChild(dynamicElement); // Add the dynamic part
+  
   cyclingInterval = setInterval(() => {
     const chosen = suggestions[currentIndex];
-    document.getElementById("chosenOption").textContent = `Suggestion: ${chosen}`;
+    //document.getElementById("chosenOption").textContent = `Suggestion: ${chosen}`;
+    dynamicElement.textContent = chosen;
     createFloatingOption(chosen); 
     currentIndex = (currentIndex + 1) % suggestions.length;
   }, 200); // Change every 200ms

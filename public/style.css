@@ -228,4 +228,15 @@ button:hover {
       transform: translateY(-80px) scale(0.9); /* Move further up and shrink */
     }
   }
+
+.static-label {
+    font-weight: bold;
+    color: #333; /* Darker color for emphasis */
+}
+
+#dynamicChoice {
+    color: #2196f3; /* Make the cycling text visually distinct */
+    font-weight: normal;
+}
+
   
