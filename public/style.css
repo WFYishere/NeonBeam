@@ -7,6 +7,11 @@ html, body {
     width: 100vw; /* Full viewport width */
     overflow: hidden; /* Prevent scrolling */
 
+    background-image: url('./bg.webp'); /* Path to your local image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+
 }
 
 button {
