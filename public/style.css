@@ -177,7 +177,7 @@ button:hover {
 }
 
 .suggestion-text {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 20px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -230,8 +230,11 @@ button:hover {
   }
 
 .static-label {
+    display: none;
+    margin-top: 10px; /* Adjust the vertical space */
+    position: relative; 
+    top: 5px; /* Shift it downward */
     font-weight: bold;
-    color: #333; /* Darker color for emphasis */
 }
 
 #dynamicChoice {
