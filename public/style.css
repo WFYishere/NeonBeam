@@ -22,8 +22,22 @@ body {
     height: calc(90vh - 100px); /* Full viewport height minus 80px */
 }
 
-h1 {
+/* Style the left section (text, input, and button) */
+.left-section {
+    flex: 1; /* Take up equal space */
+    margin-right: 20px; /* Space between sections */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.left-section h1 {
     font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.left-section p {
+    font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 

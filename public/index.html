@@ -12,39 +12,42 @@
 
   <body>
     <div class="container">
-        <h1>Neon Beam</h1>
-        <p>Good News for people with choice-difficulty!</p>
-      
-        <div class="input-wrapper">
-            <div class="input-container">
-              <input id="userInput" type="text" placeholder="What should I do?" />
-              <div id="dropdown-arrow" class="arrow">▼</div>
-              <div id="dropdown-menu" class="dropdown">
-                <button class="dropdown-item">What should I eat today?</button>
-                <button class="dropdown-item">What movie should I watch?</button>
-                <button class="dropdown-item">Where should I travel next?</button>
-                <button class="dropdown-item">What book should I read?</button>
-                <button class="dropdown-item">What should I input in this box?</button>
-              </div>
+        <!-- Left Section -->
+        <div class="left-section">
+            <h1>Neon Beam</h1>
+            <p>Good News for people with choice-difficulty!</p>
+            
+            <div class="input-wrapper">
+                <div class="input-container">
+                    <input id="userInput" type="text" placeholder="What should I do?" />
+                    <div id="dropdown-arrow" class="arrow">▼</div>
+                    <div id="dropdown-menu" class="dropdown">
+                        <button class="dropdown-item">What should I eat today?</button>
+                        <button class="dropdown-item">What movie should I watch?</button>
+                        <button class="dropdown-item">Where should I travel next?</button>
+                        <button class="dropdown-item">What book should I read?</button>
+                        <button class="dropdown-item">What should I input in this box?</button>
+                    </div>
+                </div>
+
+                <button id="askBtn" class="center-button">Decide</button>
+
+                <div id="progress-container" style="display: none;">
+                    <div id="progress-bar"></div>
+                </div>
             </div>
 
-
-
-            <button id="askBtn" class="center-button">Decide</button>
-
-
-            <div id="progress-container" style="display: none;">
-                <div id="progress-bar"></div>
-              </div>
+            <div id="chosenOption"></div>
+            <button id="stopBtn" class="center-button" style="display: none;">Stop</button>
         </div>
 
-        <div id="chosenOption"></div>
-        <button id="stopBtn" class="center-button" style="display: none;">Stop</button>
-        <div id="cloud-container"></div>
-      </div>
+        <!-- Right Section -->
+        <div class="right-section">
+            <div id="cloud-container"></div>
+        </div>
+    </div>
 
     <script src="./script.js"></script>
     <script src="./decisionHandler.js"></script>
-
   </body>
 </html>
