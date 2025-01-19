@@ -102,7 +102,7 @@ function startCyclingSuggestions(suggestions) {
     dynamicElement.textContent = chosen;
     createFloatingOption(chosen);
     currentIndex = (currentIndex + 1) % suggestions.length;
-  }, 80); // Change every 80
+  }, 100); // Change every 80
 }
 
 function getRandomColor(isInContainer) {

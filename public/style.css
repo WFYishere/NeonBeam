@@ -22,7 +22,7 @@ button {
 }
 
 button:hover {
-    background-color: #1e88e5;
+    background-color: #1869b0;
 }
 
 .container {
@@ -52,7 +52,7 @@ button:hover {
 
 .left-section h1 {
     font-size: 4rem;
-    margin-top: 150px;
+    margin-top: 120px;
     margin-bottom: 1rem;
     font-family: 'Lucida Handwriting', Cursive;
 }
