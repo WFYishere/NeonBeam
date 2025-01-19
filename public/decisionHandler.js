@@ -4,7 +4,7 @@ let floatingTimeouts = []; // Store timeouts for floating elements
 askBtn.addEventListener("click", async () => {
   const userPrompt = userInput.value.trim();
   if (!userPrompt) return;
-
+  
   progressBar.style.width = "0%";
   progressContainer.style.display = "block";
 
@@ -53,6 +53,14 @@ document.getElementById("stopBtn").addEventListener("click", () => {
   clearInterval(cyclingInterval); // Stop cycling suggestions
   cyclingInterval = null;
 
+  const userPrompt = userInput.value.trim();
+  if (!userPrompt) return;
+
+  if (userPrompt === "Rickroll" || userPrompt === "Never gonna give you up" || userPrompt ===  "What should I input in this box?") {
+    const url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Replace with your desired URL
+    window.open(url, "_blank"); // Opens in a new tab
+  }
+
   floatingTimeouts.forEach((timeout) => clearTimeout(timeout));
   floatingTimeouts = [];
 
@@ -62,8 +70,6 @@ document.getElementById("stopBtn").addEventListener("click", () => {
 
   document.getElementById("stopBtn").style.display = "none";
 
-  // const url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Replace with your desired URL
-  // window.open(url, "_blank"); // Opens in a new tab
 });
 
 
@@ -152,7 +158,7 @@ function displayTagCloud(wordsArray) {
   }
 
   TagCloud("#cloud-container", wordsArray, {
-    radius: 180,
+    radius: 300,
     maxSpeed: "fast",
     initSpeed: "normal",
     direction: 360,

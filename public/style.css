@@ -46,18 +46,21 @@ button:hover {
     margin-right: 20px; /* Space between sections */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
+    justify-content: auto; /* Center items vertically */
+    /*align-items: center; /* Center items horizontally */
 }
 
 .left-section h1 {
-    font-size: 2rem;
+    font-size: 4rem;
+    margin-top: 150px;
     margin-bottom: 1rem;
+    font-family: 'Lucida Handwriting', Cursive;
 }
 
 .left-section p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    font-family: 'Times New Roman', Serif;
 }
 
 .input-wrapper {
@@ -148,20 +151,27 @@ button:hover {
     font-size: 1.2em;
 }
 
+.right-section {
+    flex: 1; /* Takes up half the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #cloud-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    height: 90%;
+    width: 200%;
+    height: 200%;
     margin: 0 auto;
-    border: none; /* 1px solid #ddd; */
+    border: none; /*1px solid #ddd;*/
     background-color: transparent;
-    /*position: relative;*/
+    position: relative;
 }
 
 #progress-container {
-    width: 100%;
+    width: 60%;
     background-color: #f3f3f3;
     border-radius: 8px;
     margin: 10px 0;
