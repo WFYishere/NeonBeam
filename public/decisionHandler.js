@@ -90,9 +90,14 @@ function startCyclingSuggestions(suggestions) {
   }, 200); // Change every 200ms
 }
 
-function getRandomColor() {
-  const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A8", "#FFC300", "#DAF7A6", "#900C3F"];
-  return colors[Math.floor(Math.random() * colors.length)];
+function getRandomColor(isInContainer) {
+  const colors = ["	#ffffff", " #bfbfbf", " #7f7f7f", " #404040", " #000000"];
+  const colorIndex = Math.floor(Math.random() * colors.length);
+  if (isInContainer && colorIndex > 0) {
+    colorIndex = colorIndex - 1;
+  }
+  return colors[colorIndex];
+  // return "080808"
 }
 
 function createFloatingOption(text) {
@@ -100,14 +105,18 @@ function createFloatingOption(text) {
   floatingOption.textContent = text;
   floatingOption.className = "floating-option";
 
-  // Assign a random color
-  floatingOption.style.color = getRandomColor();
+  document.body.appendChild(floatingOption);
+  const optionRect = floatingOption.getBoundingClientRect();
+  const optionWidth = optionRect.width;
+  const optionHeight = optionRect.height;
 
   // Get the container's dimensions
   const container = document.querySelector(".container");
   const containerRect = container.getBoundingClientRect();
+  
 
-  let x, y;
+  let x, y, isInContainer;
+  /*
   do {
     x = Math.random() * window.innerWidth;
     y = Math.random() * window.innerHeight; 
@@ -115,7 +124,17 @@ function createFloatingOption(text) {
     x > containerRect.left && x < containerRect.right && // Inside container horizontally
     y > containerRect.top && y < containerRect.bottom // Inside container vertically
   );
+  */
+  x = Math.random() * (window.innerWidth - optionWidth);
+  y = Math.random() * (window.innerHeight - optionHeight);
 
+  isInContainer = x > containerRect.left && x < containerRect.right && y > containerRect.top && y < containerRect.bottom;
+
+  if (isInContainer && Math.random() > 0.5) {
+    return ;
+  }
+
+  floatingOption.style.color = getRandomColor(isInContainer);
   floatingOption.style.left = `${x}px`;
   floatingOption.style.top = `${y}px`;
 
@@ -134,18 +153,18 @@ function createFloatingOption(text) {
 function displayTagCloud(wordsArray) {
   // Clear old cloud
   const cloudContainer = document.getElementById("cloud-container");
-  cloudContainer.innerHTML = ""; 
+  cloudContainer.innerHTML = "";
 
   if (!wordsArray.length) {
-      wordsArray = placeholderWords; // Use placeholder words if no suggestions
+    wordsArray = placeholderWords; // Use placeholder words if no suggestions
   }
 
   TagCloud("#cloud-container", wordsArray, {
-      radius: 180,
-      maxSpeed: "fast",
-      initSpeed: "normal",
-      direction: 360,
-      keep: true,
-      reverseDirection: true,
+    radius: 180,
+    maxSpeed: "fast",
+    initSpeed: "normal",
+    direction: 360,
+    keep: true,
+    reverseDirection: true,
   });
 }
