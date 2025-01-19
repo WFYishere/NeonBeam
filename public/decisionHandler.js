@@ -165,6 +165,11 @@ function displayTagCloud(wordsArray) {
     keep: true,
     reverseDirection: true,
   });
+
+  const rightSection = document.querySelector(".right-section");
+  if (rightSection) {
+    rightSection.style.display = "flex"; // Show the right section
+  }
 }
 
 
