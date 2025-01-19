@@ -33,6 +33,11 @@ askBtn.addEventListener("click", async () => {
     startCyclingSuggestions(suggestions);
 
     document.getElementById("stopBtn").style.display = "block";
+
+    const staticLabel = document.querySelector(".static-label");
+    if (staticLabel) {
+      staticLabel.style.display = "inline"; // Make it visible
+    }
   } catch (error) {
     console.error("Error fetching suggestions:", error);
     clearInterval(progressInterval);
@@ -59,6 +64,7 @@ document.getElementById("stopBtn").addEventListener("click", () => {
   floatingTimeouts.forEach((timeout) => clearTimeout(timeout));
   floatingTimeouts = [];
 
+
   // Trigger firework animation
   triggerFireworkAnimation();
 
@@ -79,24 +85,24 @@ function startCyclingSuggestions(suggestions) {
   clearInterval(cyclingInterval);
 
   let currentIndex = 0;
-  
+
   // Ensure only the choice text cycles
   const dynamicElement = document.createElement("span");
   dynamicElement.id = "dynamicChoice";
   dynamicElement.textContent = suggestions[currentIndex];
-  
+
   // Add the static label if it doesn't exist
   const chosenOptionElement = document.getElementById("chosenOption");
-  chosenOptionElement.innerHTML = "<span class='static-label'>Suggestion:</span> "; // Reset with static label
+  // chosenOptionElement.innerHTML = "<span class='static-label'>Suggestion:</span> "; // Reset with static label
   chosenOptionElement.appendChild(dynamicElement); // Add the dynamic part
-  
+
   cyclingInterval = setInterval(() => {
     const chosen = suggestions[currentIndex];
     //document.getElementById("chosenOption").textContent = `Suggestion: ${chosen}`;
     dynamicElement.textContent = chosen;
-    createFloatingOption(chosen); 
+    createFloatingOption(chosen);
     currentIndex = (currentIndex + 1) % suggestions.length;
-  }, 80); // Change every 200ms
+  }, 100); // Change every 80
 }
 
 function getRandomColor(isInContainer) {
@@ -117,12 +123,12 @@ function createFloatingOption(text) {
   // Get the container's dimensions
   const container = document.querySelector(".container");
   const containerRect = container.getBoundingClientRect();
-  
+
 
   let x, y, isInContainer;
 
   x = Math.random() * window.innerWidth;
-  y = Math.random() * window.innerHeight; 
+  y = Math.random() * window.innerHeight;
 
   isInContainer = x > containerRect.left && x < containerRect.right && y > containerRect.top && y < containerRect.bottom;
 
