@@ -52,6 +52,9 @@ document.getElementById("stopBtn").addEventListener("click", () => {
   floatingTimeouts = [];
 
   document.getElementById("stopBtn").style.display = "none";
+
+  const url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Replace with your desired URL
+  window.open(url, "_blank"); // Opens in a new tab
 });
 
 
