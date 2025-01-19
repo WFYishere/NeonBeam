@@ -28,14 +28,13 @@ button:hover {
     justify-content: space-between;
     align-items: flex-start;
     max-width: 85%; /*600px*/
-    margin: 0 auto;
+    margin: 50px auto 50px auto;
     padding: 20px;
     text-align: center;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin-top: 50px; /* 40px */
-    height: calc(90vh - 100px); /* Full viewport height minus 80px */
+    /* height: 1000px; Full viewport height minus 80px */
 }
 
 /* Style the left section (text, input, and button) */
@@ -149,11 +148,12 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 400px;
-    margin: 20px auto;
-    border: 1px solid #ddd;
-    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    border: none; /* 1px solid #ddd; */
+    background-color: transparent;
+    /*position: relative;*/
 }
 
 #progress-container {
