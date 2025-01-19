@@ -6,6 +6,22 @@ body {
     height: 100vh; /* Full viewport height */
 }
 
+button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    margin-left: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #2196f3;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e88e5;
+}
+
 .container {
     display: flex;
     flex-direction: row; /* Align elements horizontally */
@@ -48,22 +64,6 @@ body {
     margin-top: 20px;
 }
 
-#askBtn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #2196f3;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#askBtn:hover {
-    background-color: #4433db;
-}
-
 .input-container {
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ body {
 }
 
 .dropdown-arrow:hover {
-    background-color: #093bbb;
+    background-color: #2255d4;
 }
 
 #dropdown-menu {
@@ -123,21 +123,21 @@ body {
     background-color: #5b4bf0;
 }
 
-button {
-    padding: 8px 16px;
+#askBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
     font-size: 1rem;
-    margin-left: 8px;
-    cursor: pointer;
+    color: #fff;
+    background-color: #2196f3;
     border: none;
     border-radius: 4px;
-    background-color: #2196f3;
-    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #1e88e5;
+#askBtn:hover {
+    background-color: #4433db;
 }
-
 
 #chosenOption {
     margin-top: 20px;
