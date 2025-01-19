@@ -214,8 +214,8 @@ button:hover {
 
 .floating-option {
     position: absolute;
-    font-size: 1.5rem; /* Larger text */
-    font-weight: bold;
+    font-size: 1.0rem; /* Larger text */
+    /* font-weight: bold; */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for better visibility */
     padding: 4px 8px;
     opacity: 1;
@@ -249,4 +249,32 @@ button:hover {
     font-weight: normal;
 }
 
+/* Firework container */
+.firework-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none; 
+    z-index: 1000;
+  }
+  
+  .firework-particle {
+    position: absolute;
+    width: 18px; 
+    height: 18px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    animation: firework-circle-animation 3s ease-out forwards;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes firework-circle-animation {
+    0% {
+      transform: translate(-50%, -50%) translate(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) translate(calc(var(--distance) * cos(var(--angle))), calc(var(--distance) * sin(var(--angle)))) scale(0.8);
+      opacity: 0;
+    }
+  }
   

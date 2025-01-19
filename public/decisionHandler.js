@@ -51,10 +51,13 @@ document.getElementById("stopBtn").addEventListener("click", () => {
   floatingTimeouts.forEach((timeout) => clearTimeout(timeout));
   floatingTimeouts = [];
 
+  // Trigger firework animation
+  triggerFireworkAnimation();
+
   document.getElementById("stopBtn").style.display = "none";
 
-  const url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Replace with your desired URL
-  window.open(url, "_blank"); // Opens in a new tab
+  // const url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Replace with your desired URL
+  // window.open(url, "_blank"); // Opens in a new tab
 });
 
 
@@ -87,13 +90,13 @@ function startCyclingSuggestions(suggestions) {
     dynamicElement.textContent = chosen;
     createFloatingOption(chosen); 
     currentIndex = (currentIndex + 1) % suggestions.length;
-  }, 200); // Change every 200ms
+  }, 80); // Change every 200ms
 }
 
 function getRandomColor(isInContainer) {
   const colors = ["	#ffffff", " #bfbfbf", " #7f7f7f", " #404040", " #000000"];
   const colorIndex = Math.floor(Math.random() * colors.length);
-  if (isInContainer && colorIndex > 0) {
+  if (isInContainer && colorIndex > 0 && Math.random > 0.05) {
     colorIndex = colorIndex - 1;
   }
   return colors[colorIndex];
@@ -105,34 +108,17 @@ function createFloatingOption(text) {
   floatingOption.textContent = text;
   floatingOption.className = "floating-option";
 
-  document.body.appendChild(floatingOption);
-  const optionRect = floatingOption.getBoundingClientRect();
-  const optionWidth = optionRect.width;
-  const optionHeight = optionRect.height;
-
   // Get the container's dimensions
   const container = document.querySelector(".container");
   const containerRect = container.getBoundingClientRect();
   
 
   let x, y, isInContainer;
-  /*
-  do {
-    x = Math.random() * window.innerWidth;
-    y = Math.random() * window.innerHeight; 
-  } while (
-    x > containerRect.left && x < containerRect.right && // Inside container horizontally
-    y > containerRect.top && y < containerRect.bottom // Inside container vertically
-  );
-  */
-  x = Math.random() * (window.innerWidth - optionWidth);
-  y = Math.random() * (window.innerHeight - optionHeight);
+
+  x = Math.random() * window.innerWidth;
+  y = Math.random() * window.innerHeight; 
 
   isInContainer = x > containerRect.left && x < containerRect.right && y > containerRect.top && y < containerRect.bottom;
-
-  if (isInContainer && Math.random() > 0.5) {
-    return ;
-  }
 
   floatingOption.style.color = getRandomColor(isInContainer);
   floatingOption.style.left = `${x}px`;
@@ -167,4 +153,39 @@ function displayTagCloud(wordsArray) {
     keep: true,
     reverseDirection: true,
   });
+}
+
+
+function triggerFireworkAnimation() {
+  const chosenOptionElement = document.getElementById("chosenOption");
+  const optionRect = chosenOptionElement.getBoundingClientRect();
+
+  // Create a firework container
+  const fireworkContainer = document.createElement("div");
+  fireworkContainer.className = "firework-container";
+
+  // Position it centered around the suggestion
+  fireworkContainer.style.left = `${optionRect.left + optionRect.width / 2}px`;
+  fireworkContainer.style.top = `${optionRect.top + optionRect.height / 2}px`;
+
+  // Append to body
+  document.body.appendChild(fireworkContainer);
+
+  // Generate particles in a circle
+  const totalParticles = 20; // Adjust for more or fewer particles
+  for (let i = 0; i < totalParticles; i++) {
+    const angle = (i / totalParticles) * 2 * Math.PI; // Evenly distributed angles
+    const particle = document.createElement("div");
+    particle.className = "firework-particle";
+
+    // Set custom properties for animation
+    particle.style.setProperty("--angle", `${angle}rad`);
+    particle.style.setProperty("--distance", "100px"); // Adjust the radius of the circle
+    fireworkContainer.appendChild(particle);
+  }
+
+  // Remove firework container after animation
+  setTimeout(() => {
+    fireworkContainer.remove();
+  }, 2000); // Match animation duration
 }
